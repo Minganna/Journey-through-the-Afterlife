@@ -8,6 +8,9 @@ public class enemycontroller : MonoBehaviour {
     public float LookRadius=10.0f;
     Transform target;
     NavMeshAgent agent;
+
+  
+
 	// Use this for initialization
 	void Start () {
         target = PlayerManager.instance.Player.transform;
@@ -36,6 +39,8 @@ public class enemycontroller : MonoBehaviour {
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation,lookRotation,Time.deltaTime*5f);
     }
+
+ 
 
     void OnDrawGizmosSelected ()
     {
