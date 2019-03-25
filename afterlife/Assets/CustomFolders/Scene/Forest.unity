@@ -4577,6 +4577,11 @@ Prefab:
       propertyPath: m_Center.z
       value: 0.3666016
       objectReference: {fileID: 0}
+    - target: {fileID: 114282464318637118, guid: 60ddd406fcfe8ac4aaf3571d5f9401bd,
+        type: 2}
+      propertyPath: LookRadius
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60ddd406fcfe8ac4aaf3571d5f9401bd, type: 2}
   m_IsPrefabParent: 0
