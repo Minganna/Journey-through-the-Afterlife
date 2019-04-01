@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -935,7 +935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1531081401}
-  offset: {x: 5, y: 3, z: -5}
+  offset: {x: -10, y: -10, z: -10}
 --- !u!1 &1531081396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   JumpForce: 20
   minFall: -1.5
   PlayerController: {fileID: 1531081397}
-  GravityScale: 1
+  GravityScale: 0
 --- !u!114 &1531081403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,7 +1070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511b96d545aa2d548b2a5d1a7c1fc634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 10
+  RotationSpeed: 0
   Target: {fileID: 1531081401}
 --- !u!1 &1884580055
 GameObject:

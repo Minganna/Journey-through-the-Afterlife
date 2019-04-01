@@ -6,7 +6,6 @@ TagManager:
   tags:
   - PossibleToDissolve
   - Foe
-  - Pickable
   layers:
   - Default
   - TransparentFX
