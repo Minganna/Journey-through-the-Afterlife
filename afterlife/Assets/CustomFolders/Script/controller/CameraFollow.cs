@@ -3,7 +3,7 @@
 public class CameraFollow : MonoBehaviour {
 
     public Transform Target;
-    public float SmoothSpeed=0.125f;
+    public float SmoothSpeed=1.125f;
     public Vector3 Offset;
 
     void FixedUpdate ()
