@@ -80,7 +80,9 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineThickness: 0.3
     - _Parallax: 0.02
+    - _Rim: 4
     - _Shininess: 0.369
+    - _Size: 4
     - _SmoothnessTextureChannel: 0
     - _SpecPower: 20
     - _SpecScale: 1
