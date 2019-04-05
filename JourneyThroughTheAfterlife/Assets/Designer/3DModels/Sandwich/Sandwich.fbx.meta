@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 1691fd1e612b0eb4287b60345774e3db
+timeCreated: 1553803409
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bread
+    100002: Cheese
+    100004: Cheese.001
+    100006: Cheese.002
+    100008: Lettuce
+    100010: Lettuce.001
+    100012: Lettuce.002
+    100014: Lettuce.003
+    100016: Lettuce.004
+    100018: //RootNode
+    100020: Tomato Slices
+    100022: Tomato Slices.001
+    100024: Tomato Slices.002
+    400000: Bread
+    400002: Cheese
+    400004: Cheese.001
+    400006: Cheese.002
+    400008: Lettuce
+    400010: Lettuce.001
+    400012: Lettuce.002
+    400014: Lettuce.003
+    400016: Lettuce.004
+    400018: //RootNode
+    400020: Tomato Slices
+    400022: Tomato Slices.001
+    400024: Tomato Slices.002
+    2100000: Material.003
+    2100002: Material.001
+    2100004: Material
+    2100006: Material.002
+    2300000: Bread
+    2300002: Cheese
+    2300004: Cheese.001
+    2300006: Cheese.002
+    2300008: Lettuce
+    2300010: Lettuce.001
+    2300012: Lettuce.002
+    2300014: Lettuce.003
+    2300016: Lettuce.004
+    2300018: Tomato Slices
+    2300020: Tomato Slices.001
+    2300022: Tomato Slices.002
+    3300000: Bread
+    3300002: Cheese
+    3300004: Cheese.001
+    3300006: Cheese.002
+    3300008: Lettuce
+    3300010: Lettuce.001
+    3300012: Lettuce.002
+    3300014: Lettuce.003
+    3300016: Lettuce.004
+    3300018: Tomato Slices
+    3300020: Tomato Slices.001
+    3300022: Tomato Slices.002
+    4300000: Cheese.002
+    4300002: Cheese.001
+    4300004: Cheese
+    4300006: Tomato Slices.002
+    4300008: Tomato Slices.001
+    4300010: Lettuce.004
+    4300012: Lettuce.003
+    4300014: Lettuce.002
+    4300016: Lettuce.001
+    4300018: Lettuce
+    4300020: Tomato Slices
+    4300022: Bread
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
