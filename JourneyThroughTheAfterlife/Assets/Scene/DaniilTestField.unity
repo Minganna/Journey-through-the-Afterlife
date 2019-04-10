@@ -753,6 +753,7 @@ GameObject:
   - component: {fileID: 1148519206}
   - component: {fileID: 1148519205}
   - component: {fileID: 1148519208}
+  - component: {fileID: 1148519209}
   m_Layer: 0
   m_Name: PickableItem
   m_TagString: Pickable
@@ -767,7 +768,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1148519203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.38, z: -6.12}
+  m_LocalPosition: {x: 0, y: -0.15, z: -6.12}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1016396832}
@@ -841,6 +842,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1148519209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1148519203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afff1a4a3c377e94e80884b149a5c694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1312630553
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,9 +962,10 @@ GameObject:
   - component: {fileID: 1531081397}
   - component: {fileID: 1531081403}
   - component: {fileID: 1531081402}
+  - component: {fileID: 1531081404}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1015,7 +1028,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1531081396}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -1072,6 +1085,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationSpeed: 0
   Target: {fileID: 1531081401}
+--- !u!114 &1531081404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1531081396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4699d7eed767b4c4191662cc8a45ca00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushPower: 5
 --- !u!1 &1884580055
 GameObject:
   m_ObjectHideFlags: 0
