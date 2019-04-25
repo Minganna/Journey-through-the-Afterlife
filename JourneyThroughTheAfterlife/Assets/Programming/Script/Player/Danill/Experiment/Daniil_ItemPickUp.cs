@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Daniil_ItemPickUp : MonoBehaviour {
 
+	//Where the items goes( Player's right hand)
+	public Vector3 PickUpPosition;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,8 +18,9 @@ public class Daniil_ItemPickUp : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other)
 	{
-		//if (other.tag == "Player") {
-			Debug.Log("Colliding with player!");
-		//}
+		if (other.tag == "Player") {
+			this.transform.parent = other.transform;
+			this.transform.localPosition = PickUpPosition;
+		}
 	}
 }

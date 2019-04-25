@@ -11,9 +11,16 @@ public class Daniil_PlayerMovement : MonoBehaviour {
 	public float minFall = -1.5f;//Allows to walk up and down on uneven terrain
 	float terminalVelocity = -10.0f;//Maximum fallspeed
 	public CharacterController PlayerController;
-	public float GravityScale;
+	public float GravityScale = 1;
 
 	private Vector3 moveDirection;
+
+	public Daniil_HUD Hud;
+
+	void Start(){
+		
+		PlayerController = GetComponent<CharacterController>(); 
+	}
 
 	void Update(){
 
@@ -49,5 +56,19 @@ public class Daniil_PlayerMovement : MonoBehaviour {
 
 		moveDirection.y = moveDirection.y + (Physics.gravity.y * GravityScale);
 		PlayerController.Move (moveDirection * Time.deltaTime);
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "Pickable") {
+			Hud.OpenMessagePanel ();
+		}
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.tag == "Pickable") {
+			Hud.OpenMessagePanel ();
+		}
 	}
 }

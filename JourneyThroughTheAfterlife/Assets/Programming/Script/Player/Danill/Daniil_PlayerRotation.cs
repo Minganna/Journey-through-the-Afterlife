@@ -9,7 +9,8 @@ public class Daniil_PlayerRotation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		RotationSpeed = 10;
+		Target = GetComponent<Transform>();
 	}
 	
 	// Update is called once per frame
