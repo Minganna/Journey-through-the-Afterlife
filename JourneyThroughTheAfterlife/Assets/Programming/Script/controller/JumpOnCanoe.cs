@@ -5,7 +5,8 @@ using UnityEngine;
 public class JumpOnCanoe : MonoBehaviour {
 	public GameObject Player;
 	public Rigidbody Canoe;
-	private bool MoveCanoe;
+	public bool MoveCanoe;
+	public CameraFollow ChangeTarget;
 
 
 	// Use this for initialization
@@ -18,13 +19,21 @@ public class JumpOnCanoe : MonoBehaviour {
 
 		if (MoveCanoe) {
 			Canoe.AddForce (transform.right);
+			ChangeTarget.Target = Canoe.transform;
+		}
+		if (MoveCanoe == false) {
+			Canoe.velocity = Vector3.zero;
+		    Canoe.angularVelocity = Vector3.zero;
+	
 		}
 	}
 
-	void OnTriggerEnter()
+	void OnTriggerEnter( Collider other)
 	{
-		Player.SetActive (false);
-		MoveCanoe = true;
+		if (other.tag== "Player") {
+			Player.SetActive (false);
+			MoveCanoe = true;
+		}
 
 	}
 }
