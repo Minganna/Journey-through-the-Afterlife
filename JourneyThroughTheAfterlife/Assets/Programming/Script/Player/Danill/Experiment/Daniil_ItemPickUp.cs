@@ -8,15 +8,16 @@ public class Daniil_ItemPickUp : MonoBehaviour {
 	public Vector3 PickUpPosition;
 	public Vector3 PickUpRotation;
 	public Rigidbody Item;
+	public float ThrowForce;
 	[SerializeField] bool Interact = false;
 	[SerializeField] bool Holding = false;
-		
+
 	// Update is called once per frame
 	void Update () {
 		if (Interact == true && Input.GetKeyDown("e")) {
 			Item.freezeRotation = true;
 			Item.velocity = Vector3.zero;
-			Item.useGravity = false;
+			//Item.useGravity = false;
 			Item.transform.parent = this.transform;
 			Item.transform.localPosition = PickUpPosition;
 			Item.transform.localEulerAngles = PickUpRotation;
@@ -24,9 +25,9 @@ public class Daniil_ItemPickUp : MonoBehaviour {
 		}
 		if (Holding == true && Input.GetKeyDown ("q")) {
 			Item.freezeRotation = false;
-			Item.useGravity = true;
+			//Item.useGravity = true;
 			Holding = false;
-			Item.AddForce (transform.parent.position.x + 0f, transform.parent.position.y +150f, transform.parent.position.z +-150f);
+			Item.AddForce (transform.parent.forward * ThrowForce);
 			Item.transform.SetParent (null);
 			Interact = false;
 		}
@@ -42,7 +43,7 @@ public class Daniil_ItemPickUp : MonoBehaviour {
 	}
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.tag == "Pickable") {
+		if (other.tag == "Pickable" && Holding == false) {
 			Item = null;
 		}
 	}

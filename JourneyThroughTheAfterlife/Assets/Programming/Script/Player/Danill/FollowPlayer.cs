@@ -5,7 +5,8 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour {
 
 	public Transform Player;
-	public Vector3 offset; 
+	public Vector3 offset;
+	public Vector3 rotation;
 
 	void Start(){
 		
@@ -13,5 +14,6 @@ public class FollowPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.position = Player.position + offset;
+		transform.eulerAngles = rotation;
 	}
 }

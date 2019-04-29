@@ -5,6 +5,7 @@ using UnityEngine;
 public class Daniil_TestTrigger : MonoBehaviour {
 
 	private Animator _animator;
+	[SerializeField] bool Interact = false;
 
 	// Use this for initialization
 	void Start () {
@@ -13,17 +14,20 @@ public class Daniil_TestTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-
+		if(Input.GetKeyDown("e"))
+		{
+				_animator.SetBool ("open", true);	
+		}
+    }
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Player") {
-			_animator.SetBool ("open", true);
+			Interact = true;
 		}
 	}
+
 	void OnTriggerExit(Collider other)
 	{
-		_animator.SetBool ("open", false);
+		Interact = false;
 	}
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Daniil_TrampolineJump : MonoBehaviour {
 
 	public Daniil_PlayerMovement otherScriptVar;
+	public float addJumpForce;
 
 	public void Start(){
 		otherScriptVar = FindObjectOfType<Daniil_PlayerMovement> ();
@@ -15,7 +16,7 @@ public class Daniil_TrampolineJump : MonoBehaviour {
 			if (this.transform.position.y < other.transform.position.y) {
 				Debug.Log ("Hit!");
 
-				otherScriptVar.vertSpeed = otherScriptVar.JumpForce * 2;
+				otherScriptVar.vertSpeed = addJumpForce;
 			}
 		}
 	}

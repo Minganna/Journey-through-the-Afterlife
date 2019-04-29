@@ -5,7 +5,7 @@ using UnityEngine;
 public class Daniil_PlayerMovement : MonoBehaviour {
 
 	//As for now better not to change this values 
-	public float MoveSpeed = 10.0f;
+	public float MoveSpeed = 0.0f;
 	public float JumpForce = 20.0f;
 	public float vertSpeed; //Resulting vertical speed
 	float terminalVelocity = -10.0f;//Maximum fallspeed
@@ -30,7 +30,6 @@ public class Daniil_PlayerMovement : MonoBehaviour {
 
 		//Newest version, that allows to move in a direction that player faces.
 		//First bracets controlls forward and backward movement, and second bracets controlls right and left movement
-
 		moveDirection = (transform.forward * Input.GetAxis ("Vertical")) + (transform.right * Input.GetAxis ("Horizontal"));
 		//Normalize the vector, so that we dont go double speed, when moved diagonaly 
 		moveDirection = moveDirection.normalized * MoveSpeed;
@@ -51,10 +50,5 @@ public class Daniil_PlayerMovement : MonoBehaviour {
 
 		moveDirection.y = moveDirection.y + (Physics.gravity.y * GravityScale);
 		PlayerController.Move (moveDirection * Time.deltaTime);
-
-		if (Input.GetKeyDown("q"))
-		{
-			print("q key was pressed");
-		}
 	}
 }
