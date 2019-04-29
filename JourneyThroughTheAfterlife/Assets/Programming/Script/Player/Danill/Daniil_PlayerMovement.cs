@@ -7,8 +7,7 @@ public class Daniil_PlayerMovement : MonoBehaviour {
 	//As for now better not to change this values 
 	public float MoveSpeed = 10.0f;
 	public float JumpForce = 20.0f;
-	float vertSpeed; //Resulting vertical speed
-	public float minFall = -1.5f;//Allows to walk up and down on uneven terrain
+	public float vertSpeed; //Resulting vertical speed
 	float terminalVelocity = -10.0f;//Maximum fallspeed
 	public CharacterController PlayerController;
 	public float GravityScale = 1;
@@ -16,6 +15,7 @@ public class Daniil_PlayerMovement : MonoBehaviour {
 	private Vector3 moveDirection;
 
 	public Daniil_HUD Hud;
+
 
 	void Start(){
 		
@@ -31,7 +31,7 @@ public class Daniil_PlayerMovement : MonoBehaviour {
 		//Newest version, that allows to move in a direction that player faces.
 		//First bracets controlls forward and backward movement, and second bracets controlls right and left movement
 
-		moveDirection = (transform.forward * Input.GetAxisRaw ("Vertical")) + (transform.right * Input.GetAxisRaw ("Horizontal"));
+		moveDirection = (transform.forward * Input.GetAxis ("Vertical")) + (transform.right * Input.GetAxis ("Horizontal"));
 		//Normalize the vector, so that we dont go double speed, when moved diagonaly 
 		moveDirection = moveDirection.normalized * MoveSpeed;
 
@@ -41,11 +41,6 @@ public class Daniil_PlayerMovement : MonoBehaviour {
 			if (Input.GetButtonDown ("Jump")) {
 				vertSpeed = JumpForce;
 			} 
-			//Apply some negative force onto a player in case player doesnt jump so that we can walk
-			//up and down on uneven terrain
-			else {
-				vertSpeed = minFall;	
-			}
 		} else {
 			vertSpeed += Physics.gravity.y * 5 * Time.deltaTime;
 			if (vertSpeed < terminalVelocity) {
@@ -56,19 +51,10 @@ public class Daniil_PlayerMovement : MonoBehaviour {
 
 		moveDirection.y = moveDirection.y + (Physics.gravity.y * GravityScale);
 		PlayerController.Move (moveDirection * Time.deltaTime);
-	}
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.tag == "Pickable") {
-			Hud.OpenMessagePanel ();
-		}
-	}
-
-	private void OnTriggerExit(Collider other)
-	{
-		if (other.tag == "Pickable") {
-			Hud.OpenMessagePanel ();
+		if (Input.GetKeyDown("q"))
+		{
+			print("q key was pressed");
 		}
 	}
 }

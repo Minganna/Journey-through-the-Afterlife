@@ -6,21 +6,44 @@ public class Daniil_ItemPickUp : MonoBehaviour {
 
 	//Where the items goes( Player's right hand)
 	public Vector3 PickUpPosition;
-	// Use this for initialization
-	void Start () {
+	public Vector3 PickUpRotation;
+	public Rigidbody Item;
+	[SerializeField] bool Interact = false;
+	[SerializeField] bool Holding = false;
 		
-	}
-	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Interact == true && Input.GetKeyDown("e")) {
+			Item.freezeRotation = true;
+			Item.velocity = Vector3.zero;
+			Item.useGravity = false;
+			Item.transform.parent = this.transform;
+			Item.transform.localPosition = PickUpPosition;
+			Item.transform.localEulerAngles = PickUpRotation;
+			Holding = true;
+		}
+		if (Holding == true && Input.GetKeyDown ("q")) {
+			Item.freezeRotation = false;
+			Item.useGravity = true;
+			Holding = false;
+			Item.AddForce (transform.parent.position.x + 0f, transform.parent.position.y +150f, transform.parent.position.z +-150f);
+			Item.transform.SetParent (null);
+			Interact = false;
+		}
 	}
 
-	private void OnTriggerEnter(Collider other)
+	private void OnTriggerEnter(Collider other)           
 	{
-		if (other.tag == "Player") {
-			this.transform.parent = other.transform;
-			this.transform.localPosition = PickUpPosition;
+		if (other.tag == "Pickable" && Holding == false) {
+			Debug.Log ("Can interact");
+			Interact = true;
+			Item = other.attachedRigidbody;
+		}
+	}
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.tag == "Pickable") {
+			Item = null;
 		}
 	}
 }
