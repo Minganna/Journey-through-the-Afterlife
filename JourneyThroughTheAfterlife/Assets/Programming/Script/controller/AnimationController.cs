@@ -19,8 +19,19 @@ public class AnimationController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.UpArrow)||Input.GetKeyDown(KeyCode.RightArrow)||Input.GetKeyDown(KeyCode.DownArrow)||Input.GetKeyDown(KeyCode.LeftArrow)) {
 			speedcharacter = 1.0f;
 		}
+		if (Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.D)||Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.A)) {
+			speedcharacter = 1.0f;
+		}
+
 		if (Input.GetKeyUp(KeyCode.UpArrow)||Input.GetKeyUp(KeyCode.RightArrow)||Input.GetKeyUp(KeyCode.DownArrow)||Input.GetKeyUp(KeyCode.LeftArrow)) {
-			speedcharacter = 0.0f;
+			if (Input.anyKey == false) {
+				speedcharacter = 0.0f;
+			}
+		}
+		if (Input.GetKeyUp(KeyCode.W)||Input.GetKeyUp(KeyCode.D)||Input.GetKeyUp(KeyCode.S)||Input.GetKeyUp(KeyCode.A)) {
+			if (Input.anyKey == false) {
+				speedcharacter = 0.0f;
+			}
 		}
 
 	}

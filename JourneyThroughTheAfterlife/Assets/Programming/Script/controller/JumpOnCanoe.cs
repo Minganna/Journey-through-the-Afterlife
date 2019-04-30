@@ -28,9 +28,9 @@ public class JumpOnCanoe : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter( Collider other)
+	void OnTriggerStay( Collider other)
 	{
-		if (other.tag== "Player") {
+		if (other.tag== "Player"&&Input.GetKeyDown(KeyCode.E)) {
 			Player.SetActive (false);
 			MoveCanoe = true;
 		}
