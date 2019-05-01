@@ -7,6 +7,7 @@ public class JumpOnCanoe : MonoBehaviour {
 	public Rigidbody Canoe;
 	public bool MoveCanoe;
 	public CameraFollow ChangeTarget;
+	public DialogueTrigger startConv;
 
 
 	// Use this for initialization
@@ -26,14 +27,26 @@ public class JumpOnCanoe : MonoBehaviour {
 		    Canoe.angularVelocity = Vector3.zero;
 	
 		}
+
+
 	}
 
 	void OnTriggerStay( Collider other)
 	{
+
 		if (other.tag== "Player"&&Input.GetKeyDown(KeyCode.E)) {
 			Player.SetActive (false);
 			MoveCanoe = true;
+
 		}
 
+	}
+
+
+	void OnTriggerEnter( Collider other)
+	{
+		if (other.tag == "Player") {
+			startConv.TriggerDialogue ();
+		}
 	}
 }

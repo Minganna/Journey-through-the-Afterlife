@@ -11,6 +11,7 @@ public class DissolveLeaves : MonoBehaviour {
    public  LeavesController wallcounter1;
   public  LeavesController wallcounter2;
 
+
     // Use this for initialization
     void Start () {
         MyRendered = gameObject.GetComponent<Renderer>();
@@ -45,6 +46,8 @@ public class DissolveLeaves : MonoBehaviour {
     {
         yield return new WaitForSeconds(2f);
         dissolvestarting = true;
+	
+
 
     }
 }
