@@ -11,14 +11,14 @@ public class LeavesController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (numbwall==0)
-        {
-            activate1 = true;
-        }
-        if (numbwall == 1)
-        {
-            activate2 = true;
-        }
+		if (other.tag == "Player") {
+			if (numbwall == 0) {
+				activate1 = true;
+			}
+			if (numbwall == 1) {
+				activate2 = true;
+			}
+		}
     }
 
 }
