@@ -21,6 +21,7 @@ public class JumpOnCanoe : MonoBehaviour {
 		if (MoveCanoe) {
 			Canoe.AddForce (transform.right);
 			ChangeTarget.Target = Canoe.transform;
+			startConv.NextSentence ();
 		}
 		if (MoveCanoe == false) {
 			Canoe.velocity = Vector3.zero;

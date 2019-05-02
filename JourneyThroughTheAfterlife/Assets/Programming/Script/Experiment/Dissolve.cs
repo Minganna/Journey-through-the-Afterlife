@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Dissolve : MonoBehaviour {
-    MeshRenderer rend;
+	SkinnedMeshRenderer rend;
     bool GiveandTakeLife;
     float Threshold;
     bool Dissolving = false;
@@ -22,7 +22,18 @@ public class Dissolve : MonoBehaviour {
             GiveTakeLife();
         }
            
+		if (Dissolving)
+		{
+			Threshold += 0.01f;
+			rend.material.SetFloat("_Threshold", Threshold);
+		}
     }
+
+	void OnMouseOver()
+	{
+		Debug.Log (gameObject.name);
+	}
+
 
     void GiveTakeLife()
     {
@@ -42,15 +53,11 @@ public class Dissolve : MonoBehaviour {
         {
             GiveLife = false;
         }
-        if (Dissolving)
-        {
-            Threshold += 0.01f;
-            rend.material.SetFloat("_Threshold", Threshold);
-        }
+      
         else if (GiveLife)
         {
             Threshold -= 0.001f;
-            rend.material.SetFloat("_Threshold", Threshold);
+			rend.material.SetFloat("_Threshold", Threshold);
         }
     }
     void OnTriggerStay(Collider collision)
@@ -58,11 +65,21 @@ public class Dissolve : MonoBehaviour {
         if(collision.gameObject.tag=="PossibleToDissolve")
         {
             Enemy = GameObject.FindGameObjectWithTag("PossibleToDissolve");
-            rend = Enemy.GetComponent<MeshRenderer>();
-            rend.material.shader = Shader.Find("Custom/Dissolve");
+			rend = Enemy.GetComponentInChildren<SkinnedMeshRenderer>();
+			rend.material.shader = Shader.Find("Custom/Dissolve");
             GiveandTakeLife = true;
+			return;
           
         }
+		if(collision.gameObject.tag=="GhostCoin")
+		{
+			Enemy = GameObject.FindGameObjectWithTag("GhostCoin");
+			rend = Enemy.GetComponentInChildren<SkinnedMeshRenderer>();
+			rend.material.shader = Shader.Find("Custom/Dissolve");
+			GiveandTakeLife = true;
+			return;
+
+		}
     }
 
     void OnTriggerExit(Collider other)

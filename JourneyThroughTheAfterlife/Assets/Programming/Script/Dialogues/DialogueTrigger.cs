@@ -8,11 +8,7 @@ public class DialogueTrigger : MonoBehaviour {
 	public DialogueManager Manager;
 
 
-	void Update()
-	{
-		NextSentence ();
-	}
-
+		
 
 	public void TriggerDialogue ()
 	{
@@ -20,12 +16,10 @@ public class DialogueTrigger : MonoBehaviour {
 			}
 
 
-	void NextSentence()
+	public void NextSentence()
 	{
-		if (Input.GetKeyDown(KeyCode.E))
-			{
-				Manager.DisplayNextSentence();
-			}
+
+	 	Manager.DisplayNextSentence();
 
 	}
 }

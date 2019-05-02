@@ -6,6 +6,7 @@ public class ChangeCamera : MonoBehaviour {
 
 
 	public CameraFollow changeoffset;
+	public DialogueTrigger FirstDialogue;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,12 +17,20 @@ public class ChangeCamera : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter()
+	void OnTriggerEnter(Collider other)
 	{
-		changeoffset.Offset = new Vector3 (-10, 4, 0);
+		if (other.tag == "Player") {
+			changeoffset.Offset = new Vector3 (-10, 4, 0);
+		}
 	}
-	void OnTriggerExit()
+	void OnTriggerExit(Collider other)
 	{
-		changeoffset.Offset = new Vector3 (0, 2, -10);
+		if (other.tag == "Player") {
+			changeoffset.Offset = new Vector3 (0, 2, -10);
+			FirstDialogue.TriggerDialogue ();
+		}
+	
+
+
 	}
 }
