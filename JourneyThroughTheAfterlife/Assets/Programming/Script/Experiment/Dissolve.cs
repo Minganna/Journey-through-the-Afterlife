@@ -12,7 +12,6 @@ public class Dissolve : MonoBehaviour {
 	public Animator animator;
 	public DialogueTrigger dialogue;
 	public GameObject Coin;
-	bool Addrigidbody=true;
 
 
     public bool CursorIsOver = false;
@@ -22,17 +21,10 @@ public class Dissolve : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-		if (Threshold > 1f) {
+		if (Threshold > 2f) {
 
-			if (Addrigidbody == true) {
-				Coin.transform.parent = null;
-				Rigidbody CoinRigidbody = Coin.AddComponent<Rigidbody> ();
-				CoinRigidbody.useGravity = true;
-				Addrigidbody = false;
-			}
-			if (Enemy != null) {
-				Destroy (Enemy);
-			}
+			Coin.transform.parent = null;
+			Destroy (Enemy);
 		}
        
     if(GiveandTakeLife&&CursorIsOver)
@@ -97,7 +89,6 @@ public class Dissolve : MonoBehaviour {
 			return;
 
 		}
-			
     }
 
     void OnTriggerExit(Collider other)
