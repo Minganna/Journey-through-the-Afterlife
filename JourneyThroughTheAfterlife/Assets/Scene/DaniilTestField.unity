@@ -1743,7 +1743,7 @@ MonoBehaviour:
   PickUpPosition: {x: 0.47, y: 0.27, z: 0.3}
   PickUpRotation: {x: 0, y: 165, z: 0}
   Item: {fileID: 0}
-  ThrowForce: 100
+  ThrowForce: 300
   Interact: 0
   Holding: 0
 --- !u!65 &1992649535
