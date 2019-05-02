@@ -9,6 +9,10 @@ public class Dissolve : MonoBehaviour {
     bool Dissolving = false;
     bool GiveLife = false;
     GameObject Enemy;
+	public Animator animator;
+	public DialogueTrigger dialogue;
+	public GameObject Coin;
+
 
     public bool CursorIsOver = false;
 
@@ -16,6 +20,12 @@ public class Dissolve : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+
+		if (Threshold > 2f) {
+
+			Coin.transform.parent = null;
+			Destroy (Enemy);
+		}
        
     if(GiveandTakeLife&&CursorIsOver)
         {
@@ -24,8 +34,13 @@ public class Dissolve : MonoBehaviour {
            
 		if (Dissolving)
 		{
+			if (Enemy != null) {
+				animator.SetBool ("IsDying", true);
+
 			Threshold += 0.01f;
 			rend.material.SetFloat("_Threshold", Threshold);
+			dialogue.NextSentence ();
+			}
 		}
     }
 
@@ -62,20 +77,14 @@ public class Dissolve : MonoBehaviour {
     }
     void OnTriggerStay(Collider collision)
     {
-        if(collision.gameObject.tag=="PossibleToDissolve")
-        {
-            Enemy = GameObject.FindGameObjectWithTag("PossibleToDissolve");
-			rend = Enemy.GetComponentInChildren<SkinnedMeshRenderer>();
-			rend.material.shader = Shader.Find("Custom/Dissolve");
-            GiveandTakeLife = true;
-			return;
-          
-        }
 		if(collision.gameObject.tag=="GhostCoin")
 		{
-			Enemy = GameObject.FindGameObjectWithTag("GhostCoin");
-			rend = Enemy.GetComponentInChildren<SkinnedMeshRenderer>();
-			rend.material.shader = Shader.Find("Custom/Dissolve");
+
+				Enemy = GameObject.FindGameObjectWithTag ("GhostCoin");
+			if (Enemy != null) {
+				rend = Enemy.GetComponentInChildren<SkinnedMeshRenderer> ();
+				rend.material.shader = Shader.Find ("Custom/Dissolve");
+			}
 			GiveandTakeLife = true;
 			return;
 
