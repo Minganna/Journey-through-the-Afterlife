@@ -8,6 +8,8 @@ public class JumpOnCanoe : MonoBehaviour {
 	public bool MoveCanoe;
 	public CameraFollow ChangeTarget;
 	public DialogueTrigger startConv;
+	public bool CoinCollected=false;
+	public GameObject DestroyLight;
 
 
 	// Use this for initialization
@@ -22,6 +24,9 @@ public class JumpOnCanoe : MonoBehaviour {
 			Canoe.AddForce (transform.right);
 			ChangeTarget.Target = Canoe.transform;
 			startConv.NextSentence ();
+			CoinCollected = false;
+			Destroy (DestroyLight);
+
 		}
 		if (MoveCanoe == false) {
 			Canoe.velocity = Vector3.zero;
@@ -29,16 +34,22 @@ public class JumpOnCanoe : MonoBehaviour {
 	
 		}
 
+		if (CoinCollected == true)
+		{
+			ChangeTarget.Offset =new Vector3(0,2,+10);
+		}
+
 
 	}
 
 	void OnTriggerStay( Collider other)
 	{
+		if (CoinCollected == true) {
+			if (other.tag == "Player" && Input.GetKeyDown (KeyCode.E)) {
+				Player.SetActive (false);
+				MoveCanoe = true;
 
-		if (other.tag== "Player"&&Input.GetKeyDown(KeyCode.E)) {
-			Player.SetActive (false);
-			MoveCanoe = true;
-
+			}
 		}
 
 	}
@@ -46,8 +57,10 @@ public class JumpOnCanoe : MonoBehaviour {
 
 	void OnTriggerEnter( Collider other)
 	{
-		if (other.tag == "Player") {
-			startConv.TriggerDialogue ();
+		if (CoinCollected == true) {
+			if (other.tag == "Player") {
+				startConv.TriggerDialogue ();
+			}
 		}
 	}
 }
