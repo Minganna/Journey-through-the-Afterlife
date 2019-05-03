@@ -10,6 +10,7 @@ TagManager:
   - Trampoline
   - GhostCoin
   - PossibleToDissolve
+  - Floor
   layers:
   - Default
   - TransparentFX

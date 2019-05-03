@@ -12,10 +12,12 @@ public class Daniil_PlayerRotation : MonoBehaviour {
 		RotationSpeed = 10;
 		Target = GetComponent<Transform>();
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
-		float horizontal = Input.GetAxis ("Mouse X") * RotationSpeed;
-		Target.Rotate (0, horizontal, 0);
+	void FixedUpdate () {
+		if (Input.anyKey == false) {
+			float horizontal = Input.GetAxis ("Mouse X") * RotationSpeed;
+			Target.Rotate (0, horizontal, 0);
+		}
 	}
 }
