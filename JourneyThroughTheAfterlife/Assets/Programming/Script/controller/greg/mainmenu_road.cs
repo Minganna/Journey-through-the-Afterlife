@@ -8,7 +8,7 @@ public class mainmenu_road : MonoBehaviour {
 	public GameObject[] RoadComponents = new GameObject[10];
 	const float RoadLength = 38f;
 
-	[SerializeField]	const float RoadSpeed = 14f;
+	[SerializeField]	const float RoadSpeed = 12f;
 
 	
 	// Update is called once per frame
