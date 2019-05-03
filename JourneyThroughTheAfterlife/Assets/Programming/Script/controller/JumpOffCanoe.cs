@@ -7,6 +7,7 @@ public class JumpOffCanoe : MonoBehaviour {
 	public JumpOnCanoe OnCanoe;
 	public GameObject Player;
 	public CameraFollow NewTarget;
+	public GameObject PlayerSit;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,7 @@ public class JumpOffCanoe : MonoBehaviour {
 		Player.transform.position = gameObject.transform.position;
 		Player.SetActive(true);
 		NewTarget.Target = Player.transform;
+		Destroy (PlayerSit);
 
 
 	}

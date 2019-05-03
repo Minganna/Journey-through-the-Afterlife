@@ -20,7 +20,6 @@ public class RaycasttoNPC : MonoBehaviour {
 		LayerMask mask = LayerMask.NameToLayer ("CameraSearch");
 	
 			if (Physics.Raycast (ray, out hitNPC, 100f, mask)) {
-				Debug.Log (hitNPC.transform.name);
 				dissolve.CursorIsOver = true;
 				if (hitNPC.transform.tag == "GhostCoin") {
 				if (checkGhost == true) {

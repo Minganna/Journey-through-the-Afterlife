@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Daniil_PlayerRotation : MonoBehaviour {
 
+	public bool Playtime=true;
 	public float RotationSpeed;
 	public Transform Target;
 
@@ -15,9 +16,11 @@ public class Daniil_PlayerRotation : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Input.anyKey == false) {
-			float horizontal = Input.GetAxis ("Mouse X") * RotationSpeed;
-			Target.Rotate (0, horizontal, 0);
+		if (Playtime) {
+			if (Input.anyKey == false) {
+				float horizontal = Input.GetAxis ("Mouse X") * RotationSpeed;
+				Target.Rotate (0, horizontal, 0);
+			}
 		}
 	}
 }

@@ -7,6 +7,7 @@ public class ChangeCamera : MonoBehaviour {
 
 	public CameraFollow changeoffset;
 	public DialogueTrigger FirstDialogue;
+	public GameObject LightDestroy;
 	// Use this for initialization
 	void Start () {
 		
@@ -21,6 +22,7 @@ public class ChangeCamera : MonoBehaviour {
 	{
 		if (other.tag == "Player") {
 			changeoffset.Offset = new Vector3 (-10, 4, 0);
+			Destroy (LightDestroy);
 		}
 	}
 	void OnTriggerExit(Collider other)

@@ -6,7 +6,9 @@
 	public class Daniil_PlayerMovement : MonoBehaviour {
 
 		//As for now better not to change this values 
-		public float MoveSpeed = 0.0f;
+
+		public bool Playtime=true;
+ 		public float MoveSpeed = 0.0f;
 		public float JumpForce = 20.0f;
 		public float vertSpeed; //Resulting vertical speed
 		float terminalVelocity = -10.0f;//Maximum fallspeed
@@ -24,7 +26,7 @@
 		}
 
 		void Update(){
-
+		if (Playtime) {
 			//Moving player methods
 			//Old version
 			//moveDirection = new Vector3 (Input.GetAxis ("Horizontal") * Speed, moveDirection.y, Input.GetAxis ("Vertical") * Speed);
@@ -52,4 +54,5 @@
 			moveDirection.y = moveDirection.y + (Physics.gravity.y * GravityScale);
 			PlayerController.Move (moveDirection * Time.deltaTime);
 		}
+	}
 	}

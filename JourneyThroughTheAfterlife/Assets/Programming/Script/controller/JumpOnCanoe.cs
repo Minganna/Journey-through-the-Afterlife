@@ -10,6 +10,7 @@ public class JumpOnCanoe : MonoBehaviour {
 	public DialogueTrigger startConv;
 	public bool CoinCollected=false;
 	public GameObject DestroyLight;
+	public GameObject PlayerOnCanoe;
 
 
 	// Use this for initialization
@@ -26,6 +27,7 @@ public class JumpOnCanoe : MonoBehaviour {
 			startConv.NextSentence ();
 			CoinCollected = false;
 			Destroy (DestroyLight);
+			PlayerOnCanoe.SetActive (true);
 
 		}
 		if (MoveCanoe == false) {
