@@ -1480,10 +1480,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1025536999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a3cd18ce40077d4283d40dcdf6ac979, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c101b2bdb0ba1d4fb0af875ba67d6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScene: 0
+  greg_startgame: 0
 --- !u!1 &1074949467 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1524933774581442, guid: 3c99c25223a83b74cb13ab7e62e27127,
@@ -2195,10 +2195,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1582706534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a3cd18ce40077d4283d40dcdf6ac979, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c101b2bdb0ba1d4fb0af875ba67d6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScene: 0
+  greg_startgame: 0
 --- !u!1001 &1587496195
 Prefab:
   m_ObjectHideFlags: 0
