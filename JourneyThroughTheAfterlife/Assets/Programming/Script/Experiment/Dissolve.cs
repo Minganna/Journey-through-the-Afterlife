@@ -31,6 +31,7 @@ public class Dissolve : MonoBehaviour {
 				Addrigidbody = false;
 			}
 			if (Enemy != null) {
+                this.transform.LookAt(Enemy.transform);
 				Destroy (Enemy);
 			}
 		}
