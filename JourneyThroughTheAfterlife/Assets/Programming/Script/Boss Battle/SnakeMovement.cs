@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class SnakeMovement : MonoBehaviour {
 
-	public Animator anim;
+	public GameObject snake;
+	Animator anim;
 
 	void start (){
-		GetComponent<Animator> ();
+		anim = snake.GetComponent<Animator> ();
 	}
 
 	private void OnTriggerEnter ()
 	{
-
+		snake.GetComponent<Animator> ().SetBool ("Player Close", true);
 	}
 
 }
