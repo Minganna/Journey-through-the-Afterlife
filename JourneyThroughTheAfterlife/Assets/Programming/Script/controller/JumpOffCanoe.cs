@@ -8,10 +8,12 @@ public class JumpOffCanoe : MonoBehaviour {
 	public GameObject Player;
 	public CameraFollow NewTarget;
 	public GameObject PlayerSit;
+    public Camera cam;
+    public int OldMask;
 
 	// Use this for initialization
 	void Start () {
-		
+        OldMask= cam.cullingMask;
 	}
 	
 	// Update is called once per frame
@@ -21,6 +23,7 @@ public class JumpOffCanoe : MonoBehaviour {
 
 	void OnTriggerEnter()
 	{
+        cam.cullingMask = OldMask;
 		OnCanoe.MoveCanoe = false;
 		Player.transform.position = gameObject.transform.position;
 		Player.SetActive(true);
@@ -28,5 +31,5 @@ public class JumpOffCanoe : MonoBehaviour {
 		Destroy (PlayerSit);
 
 
-	}
+    }
 }

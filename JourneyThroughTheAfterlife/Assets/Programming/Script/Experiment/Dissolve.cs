@@ -13,6 +13,11 @@ public class Dissolve : MonoBehaviour {
 	public DialogueTrigger dialogue;
 	public GameObject Coin;
 	bool Addrigidbody=true;
+    bool lookatenemy=true;
+    public GameObject[] grass;
+    public bool CanBeSpotted=true;
+    
+
 
 
     public bool CursorIsOver = false;
@@ -31,7 +36,7 @@ public class Dissolve : MonoBehaviour {
 				Addrigidbody = false;
 			}
 			if (Enemy != null) {
-                this.transform.LookAt(Enemy.transform);
+                
 				Destroy (Enemy);
 			}
 		}
@@ -45,8 +50,12 @@ public class Dissolve : MonoBehaviour {
 		{
 			if (Enemy != null) {
 				animator.SetBool ("IsDying", true);
-
-			Threshold += 0.01f;
+                if (lookatenemy == true)
+                {
+                    this.transform.Rotate(0, Enemy.transform.position.y, 0);
+                    lookatenemy = false;
+                }
+                Threshold += 0.01f;
 			rend.material.SetFloat("_Threshold", Threshold);
 			dialogue.NextSentence ();
 			}
@@ -86,24 +95,46 @@ public class Dissolve : MonoBehaviour {
     }
     void OnTriggerStay(Collider collision)
     {
-		if(collision.gameObject.tag=="GhostCoin")
-		{
+        if (collision.gameObject.tag == "GhostCoin")
+        {
 
-				Enemy = GameObject.FindGameObjectWithTag ("GhostCoin");
-			if (Enemy != null) {
-				rend = Enemy.GetComponentInChildren<SkinnedMeshRenderer> ();
-				rend.material.shader = Shader.Find ("Custom/Dissolve");
-			}
-			GiveandTakeLife = true;
-			return;
+            Enemy = GameObject.FindGameObjectWithTag("GhostCoin");
+            if (Enemy != null)
+            {
+                rend = Enemy.GetComponentInChildren<SkinnedMeshRenderer>();
+                rend.material.shader = Shader.Find("Custom/Dissolve");
+            }
+            GiveandTakeLife = true;
+            return;
 
-		}
-			
+        }
+
+        if (collision.gameObject.tag == "Grass")
+        {
+            foreach (GameObject Grass in grass)
+            {
+                if (Grass.transform.localScale.x < 1f && Input.GetMouseButtonDown(1))
+                {
+                    Grass.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+                }
+                if (Grass.transform.localScale.x > 0.9f)
+                {
+                    Grass.GetComponent<Collider>().isTrigger = true;
+                    CanBeSpotted = false;
+                }
+            }
+
+        }
     }
-
     void OnTriggerExit(Collider other)
     {
         GiveandTakeLife = false;
-    }
+
+
+        if (other.gameObject.tag == "Grass")
+        {
+            CanBeSpotted = true;
+        }
+        }
     }
 

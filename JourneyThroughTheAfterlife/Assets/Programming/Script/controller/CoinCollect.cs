@@ -11,6 +11,8 @@ public class CoinCollect : MonoBehaviour {
 	public Daniil_PlayerMovement movements;
 	public Daniil_PlayerRotation rotation;
 	bool fall=true;
+    public GameObject PileofAsh;
+    public Camera cam;
 
 	void OnCollisionEnter(Collision other)
 	{
@@ -35,6 +37,9 @@ public class CoinCollect : MonoBehaviour {
 		rotation.Playtime = true;
 		Jump.CoinCollected = true;
 		LightDirection.SetActive (true);
+        PileofAsh.SetActive(true);
+        PileofAsh.transform.parent = null;
+        cam.cullingMask=1<<0;
 		Destroy (gameObject);
 
 	}
