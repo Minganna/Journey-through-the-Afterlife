@@ -12,6 +12,8 @@ TagManager:
   - PossibleToDissolve
   - Floor
   - Grass
+  - Bone
+  - Punishment
   layers:
   - Default
   - TransparentFX

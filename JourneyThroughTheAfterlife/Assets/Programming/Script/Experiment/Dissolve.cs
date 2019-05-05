@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dissolve : MonoBehaviour {
 	SkinnedMeshRenderer rend;
@@ -16,6 +17,9 @@ public class Dissolve : MonoBehaviour {
     bool lookatenemy=true;
     public GameObject[] grass;
     public bool CanBeSpotted=true;
+    public Animator PlayerAni;
+    public GameObject[] Bone;
+    public Cerberus cerberus;
     
 
 
@@ -95,7 +99,21 @@ public class Dissolve : MonoBehaviour {
     }
     void OnTriggerStay(Collider collision)
     {
-        if (collision.gameObject.tag == "GhostCoin")
+
+        if (collision.gameObject.tag == "Punishment"&&cerberus.nextlevel==true)
+        {
+            SceneManager.LoadScene(2);
+        }
+
+
+            if (collision.gameObject.tag == "Bone" && Input.GetMouseButtonDown(1))
+        {
+            Instantiate(Bone[1], Bone[0].transform.position, Quaternion.identity);
+            Bone[1].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            Destroy(Bone[0]);  
+        }
+
+            if (collision.gameObject.tag == "GhostCoin")
         {
 
             Enemy = GameObject.FindGameObjectWithTag("GhostCoin");
@@ -121,6 +139,7 @@ public class Dissolve : MonoBehaviour {
                 {
                     Grass.GetComponent<Collider>().isTrigger = true;
                     CanBeSpotted = false;
+                    PlayerAni.SetBool("Sneak", true);
                 }
             }
 
@@ -134,6 +153,7 @@ public class Dissolve : MonoBehaviour {
         if (other.gameObject.tag == "Grass")
         {
             CanBeSpotted = true;
+            PlayerAni.SetBool("Sneak", false);
         }
         }
     }

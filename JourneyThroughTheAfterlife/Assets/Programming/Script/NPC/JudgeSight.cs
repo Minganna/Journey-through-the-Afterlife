@@ -9,6 +9,7 @@ public class JudgeSight : MonoBehaviour {
     public CameraFollow cam;
     bool spot=false;
     public GameObject[] Player;
+    public Animator[] Judgeani;
    
 
 	void OnTriggerEnter(Collider other)
@@ -17,6 +18,10 @@ public class JudgeSight : MonoBehaviour {
 		{
             if (spot == false)
             {
+                foreach(Animator judge in Judgeani)
+                {
+                    judge.SetBool("Spotted", true);
+                }
                 diatri.TriggerDialogue();
                 StartCoroutine(CheckPoint());
             }
