@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4290616647297792}
   - component: {fileID: 33724808143247490}
   - component: {fileID: 23792526675775272}
+  - component: {fileID: 64202072358197062}
   m_Layer: 0
   m_Name: Gateway
   m_TagString: Untagged
@@ -81,4 +82,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1717079302134246}
+  m_Mesh: {fileID: 4300000, guid: 05f1445b8dea46e40a786f6ecdbe713e, type: 3}
+--- !u!64 &64202072358197062
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1717079302134246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 05f1445b8dea46e40a786f6ecdbe713e, type: 3}

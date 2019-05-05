@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4761926027237636}
   - component: {fileID: 33180419588586044}
   - component: {fileID: 23371257454336910}
+  - component: {fileID: 64921075861569542}
   m_Layer: 0
   m_Name: Dirt_Mound_Light
   m_TagString: Untagged
@@ -81,4 +82,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1180936065357480}
+  m_Mesh: {fileID: 4300000, guid: 6038c45a48d057a4eb958c36a248d427, type: 3}
+--- !u!64 &64921075861569542
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1180936065357480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 6038c45a48d057a4eb958c36a248d427, type: 3}
