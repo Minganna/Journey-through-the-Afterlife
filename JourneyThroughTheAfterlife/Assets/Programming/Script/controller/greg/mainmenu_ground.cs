@@ -7,7 +7,7 @@ public class mainmenu_ground : MonoBehaviour {
     public GameObject[] GroundComponents = new GameObject[3];
     const float GroundLength = 118f;
 
-    public float GroundSpeed = 14f;
+    public float GroundSpeed;
 
 
     // Update is called once per frame

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class mainmenu_road : MonoBehaviour {
 
+    public mainmenu_ground ground;
 
 	public GameObject[] RoadComponents = new GameObject[10];
 	const float RoadLength = 38f;
@@ -13,6 +14,8 @@ public class mainmenu_road : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        ground.GroundSpeed = RoadSpeed;
+
 		foreach (GameObject road in RoadComponents)
 		{
 			Vector3 newRoadPos = road.transform.position;
