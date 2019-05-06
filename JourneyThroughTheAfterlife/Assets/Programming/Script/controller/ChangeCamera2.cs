@@ -7,8 +7,7 @@ public class ChangeCamera2 : MonoBehaviour {
 	public CameraFollow cam;
     public DialogueTrigger trigdi;
     public GameObject CryingGhost1;
-    public Daniil_PlayerMovement movements;
-    public Daniil_PlayerRotation rotations;
+	public JessesPlayerMovement movements;
     public GameObject Grass;
     public GameObject Player;
     bool dialoguedone=false;
@@ -25,7 +24,6 @@ public class ChangeCamera2 : MonoBehaviour {
         {
             trigdi.TriggerDialogue();
             movements.Playtime = false;
-            rotations.Playtime = false;
             cam.Target = CryingGhost1.transform;
             StartCoroutine(Instructions());
 
@@ -45,7 +43,6 @@ public class ChangeCamera2 : MonoBehaviour {
         trigdi.NextSentence();
         cam.Target = Player.transform;
         movements.Playtime = true;
-        rotations.Playtime = true;
         cam.Offset = new Vector3(-10, 4, 0);
 
     }

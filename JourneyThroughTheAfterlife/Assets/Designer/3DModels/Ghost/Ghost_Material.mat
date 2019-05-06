@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Ghost_Material
-  m_Shader: {fileID: 4800000, guid: 053884e20cd1c744d86704da446d3c9e, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0ff4b3ee99ad01344873ab9087bb51fd, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

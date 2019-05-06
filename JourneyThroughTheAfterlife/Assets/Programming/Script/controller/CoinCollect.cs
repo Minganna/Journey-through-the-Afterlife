@@ -8,8 +8,7 @@ public class CoinCollect : MonoBehaviour {
 	public JumpOnCanoe Jump;
 	public GameObject LightDirection;
 	public Animator CollectCoin;
-	public Daniil_PlayerMovement movements;
-	public Daniil_PlayerRotation rotation;
+	public JessesPlayerMovement movements;
 	bool fall=true;
     public GameObject PileofAsh;
     public Camera cam;
@@ -19,7 +18,6 @@ public class CoinCollect : MonoBehaviour {
 		if (other.gameObject.tag == "Floor") {
 			CollectCoin.SetBool ("PickUpCoin", true);
 			movements.Playtime = false;
-			rotation.Playtime = false;
 			if (fall) {
 				fall = false;
 				StartCoroutine (CoinTime ());
@@ -34,7 +32,6 @@ public class CoinCollect : MonoBehaviour {
 		yield return new WaitForSeconds (1f);
 		CollectCoin.SetBool ("PickUpCoin", false);
 		movements.Playtime = true;
-		rotation.Playtime = true;
 		Jump.CoinCollected = true;
 		LightDirection.SetActive (true);
         PileofAsh.SetActive(true);

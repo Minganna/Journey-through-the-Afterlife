@@ -27,15 +27,19 @@ public class HealthBar : MonoBehaviour {
 			RemoveLifeMeat=true;
 		}
 		if (RemoveLifeMeat == true) {
+			healthBar.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left,0,160);
 			healthBar.maxValue =50;
+			healthBar.value = healthBar.maxValue;
 			RemoveLifeMeat = false;
 		}
 		if (RemoveLifeGrass == true) {
+			healthBar.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left,0,185);
 			healthBar.maxValue =75;
+			healthBar.value = healthBar.maxValue;
 			RemoveLifeGrass = false;
 			}
 		if (canAddLife == true) {
-			healthBar.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left,0,100);
+			healthBar.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left,0,210);
 			healthBar.maxValue = 100;
 			canAddLife = false;
 

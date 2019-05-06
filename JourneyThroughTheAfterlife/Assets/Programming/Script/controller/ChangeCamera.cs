@@ -28,6 +28,8 @@ public class ChangeCamera : MonoBehaviour {
 	void OnTriggerExit(Collider other)
 	{
 		if (other.tag == "Player") {
+
+			Debug.Log (other.gameObject.transform.position.x);
 			changeoffset.Offset = new Vector3 (0, 2, -10);
 			FirstDialogue.TriggerDialogue ();
 		}

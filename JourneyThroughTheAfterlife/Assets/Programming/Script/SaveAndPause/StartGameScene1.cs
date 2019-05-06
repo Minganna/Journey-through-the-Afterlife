@@ -6,8 +6,7 @@ public class StartGameScene1 : MonoBehaviour {
 
 	public Animator animator;
 	public Animation anim;
-	public Daniil_PlayerMovement movements;
-	public Daniil_PlayerRotation rotation;
+	public JessesPlayerMovement movements;
 	public GameObject Fire;
 	public DialogueTrigger FirstConv;
 	public CameraFollow cam;
@@ -18,7 +17,6 @@ public class StartGameScene1 : MonoBehaviour {
 	void Start () {
 		animator.SetTrigger ("InitialAni");
 		movements.Playtime = false;
-		rotation.Playtime = false;
 		StartCoroutine (StartMove ());
 
 	}
@@ -33,7 +31,6 @@ public class StartGameScene1 : MonoBehaviour {
 		yield return new WaitForSeconds (4.0f);
 		cam.Target = Player;
 		movements.Playtime = true;
-		rotation.Playtime = true;
 		FirstConv.NextSentence ();
 	}
 
