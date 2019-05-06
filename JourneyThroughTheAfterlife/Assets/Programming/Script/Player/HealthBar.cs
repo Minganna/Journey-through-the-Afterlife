@@ -9,9 +9,9 @@ public class HealthBar : MonoBehaviour {
 
 	public Slider healthBar;
 	public Dissolve DissolveEnemy;
-	bool RemoveLifeGrass;
-	bool canAddLife=false;
-	bool RemoveLifeMeat=false;
+	public bool RemoveLifeGrass=false;
+	public bool canAddLife=false;
+	public bool RemoveLifeMeat=false;
 
 	void Update () {
 		if (DissolveEnemy.Addlife == 50) 
@@ -26,28 +26,31 @@ public class HealthBar : MonoBehaviour {
 		{
 			RemoveLifeMeat=true;
 		}
-		if (canAddLife == true) {
-			healthBar.maxValue = 100;
-			StartCoroutine (addRemovelife ());
-			canAddLife = false;
+		if (RemoveLifeMeat == true) {
+			healthBar.maxValue =50;
+			RemoveLifeMeat = false;
 		}
 		if (RemoveLifeGrass == true) {
 			healthBar.maxValue =75;
-			StartCoroutine (addRemovelife ());
 			RemoveLifeGrass = false;
+			}
+		if (canAddLife == true) {
+			healthBar.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left,0,100);
+			healthBar.maxValue = 100;
+			canAddLife = false;
+
 		}
-		if (RemoveLifeMeat == true) {
-			healthBar.maxValue =50;
-			StartCoroutine (addRemovelife ());
-			RemoveLifeMeat = false;
+
+
+
+
+		if (healthBar.maxValue <= 100) {
+			healthBar.value += 1;
 		}
+
+
 	}
 
 
-	IEnumerator addRemovelife()
-	{
-		yield return new WaitForSeconds (1f);
-		healthBar.value = healthBar.maxValue;
-		
-	}
+
 }
