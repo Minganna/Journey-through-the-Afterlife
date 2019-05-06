@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyNoMove : MonoBehaviour {
 	public GameObject enemy;
 	Animator anim;
+	public Transform player;
 	// Use this for initialization
 	void Start () {
 		anim = enemy.GetComponent<Animator> ();
@@ -16,6 +17,7 @@ public class EnemyNoMove : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(){
+		transform.LookAt (player);
 		enemy.GetComponent<Animator> ().SetBool ("Attack", true);
 	}
 
