@@ -20,6 +20,7 @@ public class Dissolve : MonoBehaviour {
     public Animator PlayerAni;
     public GameObject[] Bone;
     public Cerberus cerberus;
+	public int Addlife=0;
     
 
 
@@ -42,6 +43,7 @@ public class Dissolve : MonoBehaviour {
 			if (Enemy != null) {
                 
 				Destroy (Enemy);
+				Addlife = 50;
 			}
 		}
        
@@ -111,6 +113,7 @@ public class Dissolve : MonoBehaviour {
             Instantiate(Bone[1], Bone[0].transform.position, Quaternion.identity);
             Bone[1].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             Destroy(Bone[0]);  
+			Addlife = 0;
         }
 
             if (collision.gameObject.tag == "GhostCoin")
@@ -134,6 +137,7 @@ public class Dissolve : MonoBehaviour {
                 if (Grass.transform.localScale.x < 1f && Input.GetMouseButtonDown(1))
                 {
                     Grass.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+					Addlife = 25;
                 }
                 if (Grass.transform.localScale.x > 0.9f)
                 {
