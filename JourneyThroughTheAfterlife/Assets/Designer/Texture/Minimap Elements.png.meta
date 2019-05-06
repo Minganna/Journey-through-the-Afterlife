@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e7721106c21abf44884e56a7e37f2fc7
 timeCreated: 1557166473
 licenseType: Pro
@@ -6,11 +7,22 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: Minimap Elements_0
     21300002: Minimap Elements_1
+=======
+guid: 7718b063e744430478c4347348024326
+timeCreated: 1557166242
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName: {}
+>>>>>>> e659fdaf9dde228af912891497d23abf17a2a931
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
+<<<<<<< HEAD
     enableMipMap: 0
+=======
+    enableMipMap: 1
+>>>>>>> e659fdaf9dde228af912891497d23abf17a2a931
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,6 +48,7 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -1
+<<<<<<< HEAD
     wrapU: 1
     wrapV: 1
     wrapW: -1
@@ -43,6 +56,15 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
+=======
+    wrapU: -1
+    wrapV: -1
+    wrapW: -1
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+>>>>>>> e659fdaf9dde228af912891497d23abf17a2a931
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +73,15 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
+<<<<<<< HEAD
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
+=======
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+>>>>>>> e659fdaf9dde228af912891497d23abf17a2a931
   textureShape: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
@@ -69,6 +97,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<< HEAD
   - buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -160,6 +189,11 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+>>>>>>> e659fdaf9dde228af912891497d23abf17a2a931
     outline: []
     physicsShape: []
   spritePackingTag: 
