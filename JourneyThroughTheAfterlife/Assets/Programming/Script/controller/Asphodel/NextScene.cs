@@ -5,7 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour {
 
-    void OnTriggerStay(Collider other)
+    public DialogueTrigger diatri;
+
+    void OnTriggerEnter(Collider other)
+    {
+        diatri.TriggerDialogue();
+    }
+
+        void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player"&&Input.GetKeyDown(KeyCode.E))
         {
