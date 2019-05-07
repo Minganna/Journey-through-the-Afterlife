@@ -17,7 +17,7 @@ public class Daniil_ItemPickUp : MonoBehaviour {
 		if (Interact == true && Input.GetKeyDown("e")) {
 			Item.freezeRotation = true;
 			Item.velocity = Vector3.zero;
-			//Item.useGravity = false;e
+			Item.useGravity = false;
 			Item.transform.parent = this.transform;
 			Item.transform.localPosition = PickUpPosition;
 			Item.transform.localEulerAngles = PickUpRotation;
@@ -25,7 +25,7 @@ public class Daniil_ItemPickUp : MonoBehaviour {
 		}
 		if (Holding == true && Input.GetKeyDown ("q")) {
 			Item.freezeRotation = false;
-			//Item.useGravity = true;
+			Item.useGravity = true;
 			Holding = false;
 			Item.AddForce (transform.parent.forward * ThrowForce);
 			Item.transform.SetParent (null);

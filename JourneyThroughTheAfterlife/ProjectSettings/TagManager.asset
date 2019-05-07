@@ -14,6 +14,7 @@ TagManager:
   - Grass
   - Bone
   - Punishment
+  - DeletePadlock
   layers:
   - Default
   - TransparentFX
