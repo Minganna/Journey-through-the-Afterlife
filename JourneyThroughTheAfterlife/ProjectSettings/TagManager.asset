@@ -16,6 +16,7 @@ TagManager:
   - Punishment
   - DeletePadlock
   - crackedWall
+  - Minotaur
   layers:
   - Default
   - TransparentFX
