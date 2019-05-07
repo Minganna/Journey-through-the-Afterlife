@@ -21,12 +21,20 @@ public class Dissolve : MonoBehaviour {
     public GameObject[] Bone;
     public Cerberus cerberus;
 	public int Addlife=0;
-    
 
+    public AudioClip taking_life_ghost;
+    public AudioClip giving_life_plant;
+    public AudioClip giving_life_flesh;
+    public AudioSource clipsource;
+
+
+    void Start()
+    {
+        clipsource = GetComponent<AudioSource>();
+    }
 
 
     public bool CursorIsOver = false;
-
 
 
     // Update is called once per frame
@@ -43,7 +51,8 @@ public class Dissolve : MonoBehaviour {
 			if (Enemy != null) {
                 
 				Destroy (Enemy);
-				Addlife = 50;
+                clipsource.PlayOneShot(taking_life_ghost, 0.16f);
+                Addlife = 50;
 			}
 		}
        
@@ -110,6 +119,7 @@ public class Dissolve : MonoBehaviour {
 
             if (collision.gameObject.tag == "Bone" && Input.GetMouseButtonDown(1))
         {
+            clipsource.PlayOneShot(giving_life_flesh,0.5f);
             Instantiate(Bone[1], Bone[0].transform.position, Quaternion.identity);
             Bone[1].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             Destroy(Bone[0]);  
@@ -136,6 +146,7 @@ public class Dissolve : MonoBehaviour {
             {
                 if (Grass.transform.localScale.x < 1f && Input.GetMouseButtonDown(1))
                 {
+                    clipsource.PlayOneShot(giving_life_plant, 0.18f);
                     Grass.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
 					Addlife = 25;
                 }
