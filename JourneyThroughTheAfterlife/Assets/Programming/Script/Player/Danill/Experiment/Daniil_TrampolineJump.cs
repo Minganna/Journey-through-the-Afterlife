@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Daniil_TrampolineJump : MonoBehaviour {
 
-	public Daniil_PlayerMovement otherScriptVar;
+	public JessesPlayerMovement otherScriptVar;
 	public float addJumpForce;
 
 	public void Start(){
-		otherScriptVar = FindObjectOfType<Daniil_PlayerMovement> ();
+		otherScriptVar = FindObjectOfType<JessesPlayerMovement> ();
 	}
 	private void OnTriggerEnter(Collider other)
 	{

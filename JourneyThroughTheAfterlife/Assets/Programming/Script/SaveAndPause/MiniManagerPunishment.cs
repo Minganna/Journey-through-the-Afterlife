@@ -10,12 +10,17 @@ public class MiniManagerPunishment : MonoBehaviour {
     public GameObject PlayerLight;
     public Transform Player;
     bool target=false;
+    public bool safeCou=false;
 
 
 	// Use this for initialization
 	void Start () {
         diatri.TriggerDialogue();
-        StartCoroutine(MiniMapInstructions());
+        if (safeCou == false)
+        {
+            safeCou = true;
+            StartCoroutine(MiniMapInstructions());
+        }
 	}
 	
 	// Update is called once per frame
@@ -40,9 +45,9 @@ public class MiniManagerPunishment : MonoBehaviour {
 
     IEnumerator MiniMapInstructions()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         diatri.NextSentence();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         diatri.NextSentence();
     }
 
