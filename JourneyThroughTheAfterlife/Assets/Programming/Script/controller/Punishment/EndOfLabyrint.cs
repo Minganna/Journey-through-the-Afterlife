@@ -10,7 +10,19 @@ public class EndOfLabyrint : MonoBehaviour {
     public GameObject PlayerLight;
 
 
-void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            camscript.GetComponent<CamerachangeLabirint>().enabled = true;
+            cam.Offset = new Vector3(0, 2, 1);
+            minimapManager.SetActive(true);
+        }
+
+    }
+
+
+    void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
