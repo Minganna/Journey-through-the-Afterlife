@@ -12,12 +12,21 @@ public class CoinCollect : MonoBehaviour {
 	bool fall=true;
     public GameObject PileofAsh;
     public Camera cam;
+    public AudioClip soundclip;
+    public AudioSource soundsource;
 
-	void OnCollisionEnter(Collision other)
+    void Start()
+    {
+        soundsource.clip = soundclip;
+    }
+
+    void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.tag == "Floor") {
-			CollectCoin.SetBool ("PickUpCoin", true);
-			movements.Playtime = false;
+            
+            CollectCoin.SetBool ("PickUpCoin", true);
+            soundsource.Play();
+            movements.Playtime = false;
 			if (fall) {
 				fall = false;
 				StartCoroutine (CoinTime ());
