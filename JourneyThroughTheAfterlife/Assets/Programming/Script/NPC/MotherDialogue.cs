@@ -11,6 +11,7 @@ public class MotherDialogue : MonoBehaviour {
     public GameObject Player;
     public JessesPlayerMovement movement;
     public bool cutscene=true;
+    public bool changeSceneFinal=false;
 
     void OnTriggerEnter(Collider other)
     {
@@ -43,6 +44,7 @@ public class MotherDialogue : MonoBehaviour {
         diatri.NextSentence();
         cam.Target = Player.transform;
         movement.Playtime = true;
+        changeSceneFinal = true;
 
     }
 }

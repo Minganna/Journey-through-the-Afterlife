@@ -14,3 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Fields of Punishment.unity
     guid: b2fcfd6643e6ba649bace6f5146f676e
+  - enabled: 1
+    path: Assets/Scene/Fields of Asphodel.unity
+    guid: 5c14754ac03156246952e116c5377495
+  - enabled: 1
+    path: Assets/Scene/Elysium.unity
+    guid: 53840cd12bc7fe24e9a12ba8e0c24103
+  - enabled: 1
+    path: Assets/Scene/Hospital.unity
+    guid: 412bc6a5937813a458c00fd1a7f3cf06
