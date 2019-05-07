@@ -13,9 +13,11 @@ public class MiniManagerPunishment : MonoBehaviour {
     public bool safeCou=false;
 
 
+
 	// Use this for initialization
 	void Start () {
-        diatri.TriggerDialogue();
+
+
         if (safeCou == false)
         {
             safeCou = true;
@@ -45,9 +47,13 @@ public class MiniManagerPunishment : MonoBehaviour {
 
     IEnumerator MiniMapInstructions()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
+        diatri.TriggerDialogue();
+        yield return new WaitForSeconds(2f);
         diatri.NextSentence();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
+        diatri.NextSentence();
+        yield return new WaitForSeconds(2f);
         diatri.NextSentence();
     }
 

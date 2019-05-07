@@ -15,6 +15,7 @@ TagManager:
   - Bone
   - Punishment
   - DeletePadlock
+  - crackedWall
   layers:
   - Default
   - TransparentFX
