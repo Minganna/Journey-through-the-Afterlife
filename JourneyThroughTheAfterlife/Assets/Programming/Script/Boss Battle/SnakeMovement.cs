@@ -6,14 +6,29 @@ public class SnakeMovement : MonoBehaviour {
 
 	public GameObject snake;
 	Animator anim;
+    public GameObject smoke;
+    public bool CanAttack=false;
 
-	void start (){
+
+    void start (){
 		anim = snake.GetComponent<Animator> ();
 	}
 
 	private void OnTriggerEnter ()
 	{
-		snake.GetComponent<Animator> ().SetBool ("Player Close", true);
-	}
+        smoke.SetActive(true);
+        StartCoroutine(SnakeAttack());
+    }
+
+    IEnumerator SnakeAttack()
+    {
+        yield return new WaitForSeconds(1f);
+        smoke.SetActive(false);
+        snake.GetComponent<Animator>().SetBool("Player Close", true);
+        yield return new WaitForSeconds(2f);
+        CanAttack = true;
+        yield return new WaitForSeconds(2f);
+        CanAttack = false;
+    }
 
 }
